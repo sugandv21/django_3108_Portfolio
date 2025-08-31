@@ -1,0 +1,9 @@
+{% extends "portfolio/layout/base.html" %}
+{% block content %}
+<h2>{{ project.title }}</h2>
+<img src="{{ project.image.url }}" class="img-fluid mb-3">
+<p>{{ project.description }}</p>
+{% if project.link %}
+<a href="{{ project.link }}" target="_blank" class="btn btn-success">Visit Project</a>
+{% endif %}
+{% endblock %}

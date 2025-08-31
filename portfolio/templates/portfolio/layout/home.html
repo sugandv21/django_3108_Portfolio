@@ -1,0 +1,27 @@
+{% extends "portfolio/layout/base.html" %}
+
+{% block content %}
+  <h1 class="mb-4">Welcome to My Portfolio</h1>
+
+  <!-- About Section -->
+  <div class="mb-5">
+    <h3>About Me</h3>
+    <p>Hello! I'm a developer/photographer/writer. This portfolio showcases my work and skills.
+       Feel free to explore my projects and get in touch!</p>
+  </div>
+
+  <!-- Skills Section -->
+  <div class="mb-5">
+    <h3>My Skills</h3>
+    <ul class="list-group">
+      {% for skill in skills %}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          {{ skill.name }}
+          <span class="badge bg-primary">{{ skill.proficiency_level }}</span>
+        </li>
+      {% empty %}
+        <li class="list-group-item">No skills added yet.</li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}
